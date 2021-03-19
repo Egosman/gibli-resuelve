@@ -1,1 +1,28 @@
-<p>home works!</p>
+<div class="container">
+    <form class="search-film">
+        <mat-form-field class="field-film">
+            <mat-label>Film</mat-label>
+            <input type="text" matInput [formControl]="controlFilms" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let film of filteredFilms | async" [value]="film">
+                    {{ film.title }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+</div>
+
+
+<mat-card class="card" *ngFor="let film of films">
+    <mat-card-header color="primary">
+        <mat-card-title>
+            <h2>{{ film.title }}</h2>
+            <h3> {{ film.original_title }} </h3>
+        </mat-card-title>
+        <mat-card-subtitle>{{ film.release_date }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>{{ film.description }} </mat-card-content>
+    <mat-card-footer>
+        <p>Directed By {{ film.director }}</p>
+    </mat-card-footer>
+</mat-card>

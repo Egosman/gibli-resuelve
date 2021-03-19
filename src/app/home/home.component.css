@@ -1,0 +1,29 @@
+mat-card-footer {
+    text-align: right;
+    padding: 0 1rem 1rem 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+p {
+    padding-top: 1rem;
+}
+
+.search-film {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.field-film {
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    max-width: 600px;
+}
