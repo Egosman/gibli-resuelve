@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.card {
+  margin: 1rem;
+  border: 1px solid gray;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+img {
+  margin: 1rem auto;
+  display: block;
+  max-width: 100%;
+}
+
+/*mat-card::ng-deep.mat-card-header-text {
+  width: 100%;
+}*/
+
+

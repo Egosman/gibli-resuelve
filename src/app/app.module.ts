@@ -1,3 +1,4 @@
+import { DetailDialogComponent } from './shared/components/detail-dialog/detail-dialog.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    DetailDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MaterialModule
   ],
+  entryComponents: [DetailDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

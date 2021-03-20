@@ -1,0 +1,21 @@
+<div class="header">
+    <h1 mat-dialog-title>{{ Data.title }}</h1>
+</div>
+
+<div mat-dialog-content>
+    <h3>Detail's film</h3>
+
+    <p><b>Titulo Original:</b> {{ Data.original_title }}</p>
+    <p><b>Titulo romanizado:</b> {{ Data.original_title_romanised }}</p>
+    <p><b>Descripción:</b> {{ Data.description }}</p>
+    <p><b>Director:</b> {{ Data.director }}</p>
+    <p><b>Productor:</b> {{ Data.producer }}</p>
+    <p><b>Fecha de estreno:</b> {{ Data.release_date }}</p>
+    <p><b>Tiempo de duración:</b> {{ Data.running_time }}</p>
+    <p><b>Puntuación:</b> {{ Data.rt_score }}</p>
+
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">Close</button>
+</div>

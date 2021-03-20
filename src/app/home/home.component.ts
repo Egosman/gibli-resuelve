@@ -1,5 +1,7 @@
+import { DetailDialogComponent } from './../shared/components/detail-dialog/detail-dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Film } from '../shared/models/film.interface';
@@ -11,8 +13,9 @@ import { FilmsService } from './films.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  searchFilm: string;
 
-  constructor(private filmServie: FilmsService) { }
+  constructor(private filmServie: FilmsService, private dialog: MatDialog) { }
 
   
   controlFilms = new FormControl();
@@ -52,9 +55,23 @@ export class HomeComponent implements OnInit {
 
   private _filter(title: string): Film[] {
     const filterValue = title.toLowerCase();
-
     return this.films.filter(film => film.title.toLowerCase().indexOf(filterValue) === 0);
+  }
 
+  openDetailDialog():void{
+      const dialogRef = this.dialog.open(DetailDialogComponent, {
+        width: '550px',
+        data: this.controlFilms.value
+      }
+    );
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if(result){
+        console.log('Close selection');
+        this.controlFilms.setValue('');
+      }
+    });
   }
 
 }
