@@ -74,4 +74,20 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  openDetailDialogButton(filmSelected: Film): void {
+    const dialogRef = this.dialog.open(DetailDialogComponent, {
+      width: '550px',
+      data: filmSelected
+    }
+    );
+    
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if (result) {
+        console.log('Close selection');
+        this.controlFilms.setValue('');
+      }
+    });
+  }
+
 }

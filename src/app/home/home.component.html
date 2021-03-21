@@ -25,12 +25,14 @@
             <mat-card-header color="primary">
                 <mat-card-title>
                     <h2>{{ film.title }}</h2>
-                    <h3> {{ film.original_title }} </h3>
                 </mat-card-title>
+                <mat-card-subtitle>
+                    <h3> {{ film.original_title }} </h3>
+                </mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>{{ film.description }} </mat-card-content>
             <mat-card-footer>
-                <p>Directed By {{ film.director }}</p>
+                <button mat-button (click)="openDetailDialogButton(film)">More details</button>
             </mat-card-footer>
         </mat-card>
     </div>
